@@ -3,9 +3,9 @@
   <hr />
 
   <div class="col-xs-12" *ngFor="let d of departures">
-    <div class="col-xs-2">{{ d.time }}</div>
+    <div class="col-xs-3">{{ d.time }}</div>
     <div class="col-xs-1">({{ d.line }})</div>
-    <div class="col-xs-6"></div>
+    <div class="col-xs-5"></div>
     <div class="col-xs-3">{{ timeLeft(d.time) }}</div>
   </div>
 </div>
