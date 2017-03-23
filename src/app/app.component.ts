@@ -45,6 +45,13 @@ export class AppComponent {
 
   timeLeft(ts) {
     let momentTs = moment(ts, 'HH:mm');
+    if(ts.startsWith('00:')) {
+      let momentTs = moment(ts, 'HH:mm').add(1, 'days');
+      console.log(momentTs)
+    }
+    else {
+
+    }
     let momentTsNow = moment().format('HH:mm');
     let ms = moment(momentTs, "HH:mm").diff(moment(momentTsNow, "HH:mm"));
 
