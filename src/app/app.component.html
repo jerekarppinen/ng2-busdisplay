@@ -1,0 +1,9 @@
+<strong>{{ stopName }} -----> {{ destination }}</strong>
+<hr />
+
+<div class="row" *ngFor="let d of departures">
+  <div class="col-xs-1">{{ d.time }}</div>
+  <div class="col-xs-1">({{ d.line }})</div>
+  <div class="col-xs-8"></div>
+  <div class="col-xs-2">{{ timeLeft(d.time) }}</div>
+</div>
