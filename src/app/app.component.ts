@@ -43,11 +43,41 @@ export class AppComponent {
     });
   }
 
+  getColor(ts) {
+
+    let momentTs = moment(ts, 'HH:mm');
+    if(ts.startsWith('00:')) {
+      let momentTs = moment(ts, 'HH:mm').add(1, 'days');
+      console.log(momentTs)
+    }
+    else {
+
+    }
+    let momentTsNow = moment().format('HH:mm');
+    let ms = moment(momentTs, "HH:mm").diff(moment(momentTsNow, "HH:mm"));
+
+    let x = ms / 1000;
+    // let seconds = x % 60;
+    x /= 60;
+    let minutes = (x % 60);
+    x /= 60;
+    let hours = Math.round(x % 24);
+
+    if(hours < 1 && (minutes >= 3 && minutes <= 5)) {
+      return 'yellow';
+    }
+    else if (hours < 1 && minutes < 3 ) {
+      return 'red'
+    }
+
+  }
+
   timeLeft(ts) {
     let momentTs = moment(ts, 'HH:mm');
     if(ts.startsWith('00:')) {
       let momentTs = moment(ts, 'HH:mm').add(1, 'days');
       console.log(momentTs)
+      // 1000*60*60*24 maybe add this to ms variable if departure is after midnight
     }
     else {
 

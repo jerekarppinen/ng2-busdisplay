@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import 'rxjs/add/operator/map'
-import {Http, URLSearchParams} from "@angular/http";
+import {Http} from "@angular/http";
 
 @Injectable()
 export class BackendRequestService {
